@@ -1,15 +1,15 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ImageItemController;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\App\PageController;
+use App\Http\Controllers\dashboard\HomeController;
 use App\Http\Controllers\dashboard\AdminController;
 use App\Http\Controllers\dashboard\CategoryController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\TranslationController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\SuccessPartnerController;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\dashboard\ImageItemController;
+use App\Http\Controllers\dashboard\TranslationController;
+use App\Http\Controllers\dashboard\SuccessPartnerController;
+use App\Http\Controllers\dashboard\HomePageSettingsController;
 
 /*
 |--------------------------------------------------------------------------
