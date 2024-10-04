@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\dashboard;
 
-use App\Http\Controllers\Controller;
-use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller {
@@ -15,16 +15,6 @@ class AdminController extends Controller {
         return redirect('/login');
     }
 
-
-    public function login (){
-        return view('auth.login');
-
-    }
-
-    public function PageRegister (){
-        return view('auth.register');
-
-    }
 
 
 
@@ -37,7 +27,7 @@ class AdminController extends Controller {
         ]);
 
         $credentials = $request->only('email', 'password');
-        if (Auth::guard('dashboard')->attempt($credentials)) {
+        if (Auth::guard('web')->attempt($credentials)) {
             return redirect()->route('dashboard-index')->with('success', 'Signed in');
         }
 
@@ -50,11 +40,11 @@ class AdminController extends Controller {
     public function register(Request $request) {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:admins',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
         ]);
 
-        $admin = Admin::create([
+        $admin = User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),

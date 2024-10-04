@@ -20,19 +20,19 @@
         </div>
         @endif
         <h4 class="py-3 mb-4">
-            <span class="text-muted fw-light">AppSlider</span>
+            <span class="text-muted fw-light">Gallery</span>
         </h4>
         <div class="card">
             <div class="card-header">
                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
                     <div class="card-header flex-column flex-md-row">
                         <div class="head-label text-center">
-                            <h5 class="card-title mb-0">Data Table AppSlider</h5>
+                            <h5 class="card-title mb-0">Data Table Gallery</h5>
                         </div>
                         <div class="dt-action-buttons text-end pt-3 pt-md-0">
                             <div class="dt-buttons">
                                 <a class="send-model dt-button create-new btn btn-primary waves-effect waves-light" tabindex="0" type="button" data-bs-toggle="offcanvas" data-bs-target="#add-new-record">
-                                    <span><i class="mdi mdi-plus me-sm-1"></i> <span class="d-none d-sm-inline-block">Add New App Slider</span></span>
+                                    <span><i class="mdi mdi-plus me-sm-1"></i> <span class="d-none d-sm-inline-block">Add New Gallery</span></span>
                                 </a>
                             </div>
                         </div>
@@ -41,10 +41,8 @@
                         <thead>
                             <tr>
                                 <th>Image</th>
-                                <th>Name (Arabic)</th>
-                                <th>Name (English)</th>
-                                <th>Details</th>
                                 <th>Status</th>
+                                <th>Category</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -60,33 +58,25 @@
 <!-- Modal to add new record -->
 <div class="offcanvas offcanvas-end " id="add-new-record">
     <div class="offcanvas-header border-bottom">
-        <h5 class="offcanvas-title" id="exampleModalLabel">New AppSlider</h5>
+        <h5 class="offcanvas-title" id="exampleModalLabel">New Gallery</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body flex-grow-1">
         <div id="error-messages"></div>
         
-        {{ Form::open(['route' => ['appSlider.create'],'id'=>'store-form' , 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
-        
-        <!-- حقل الاسم باللغة العربية -->
-        {{ Form::label('name_ar', 'Name AR') }}
-        {{ Form::text('name_ar', null, ['class' => 'form-control']) }}
-        
-        <!-- حقل الاسم باللغة الإنجليزية -->
-        {{ Form::label('name_en', 'Name EN') }}
-        {{ Form::text('name_en', null, ['class' => 'form-control']) }}
+        {{ Form::open(['route' => ['gallery.create'],'id'=>'store-form' , 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
         
         <!-- حقل الصورة -->
         {{ Form::label('image', 'Image') }}
         {{ Form::file('image', ['id' => 'image', 'name' => 'image', 'class' => 'form-control']) }}
         
-        <!-- حقل التفاصيل -->
-        {{ Form::label('details', 'Details') }}
-        {{ Form::textarea('details', null, ['class' => 'form-control']) }}
-        
         <!-- حقل الحالة -->
         {{ Form::label('status', 'Status') }}
         {{ Form::select('status', ['1' => 'active', '0' => 'not active'], null, ['class' => 'form-control']) }}
+
+        <!-- حقل الفئة -->
+        {{ Form::label('category_id', 'Category') }}
+        {{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
 
         <br>
         <br>
@@ -110,25 +100,23 @@ $(document).ready(function() {
         processing: true,
         serverSide: true,
         ajax: {
-            url: "{{ route('appSlider.data') }}",
+            url: "{{ route('gallery.data') }}",
             type: 'GET'
         },
         columns: [
             {
                 data: 'image',
                 render: function(data, type, row) {
-                    var imgSrc = data ? '/storage/' + data : 'https://ui-avatars.com/api/?name=' + row.name_en;
+                    var imgSrc = data ? '/storage/' + data : 'https://ui-avatars.com/api/?name=Gallery';
                     return '<img src="' + imgSrc + '" class="img-thumbnail" width="50px">';
                 }
             },
-            { data: 'name_ar' },
-            { data: 'name_en' },
-            { data: 'details' },
             { data: 'status' },
+            { data: 'category.name_en' },
             {
                 data: 'id',
                 render: function(data, type, row) {
-                    var editUrl = `{{ route("appSlider.edit", ":id") }}`.replace(':id', data);
+                    var editUrl = `{{ route("gallery.edit", ":id") }}`.replace(':id', data);
                     return `
                         <a href="${editUrl}" class="dropdown-item" data-id="${data}">
                             <i class="fa fa-pencil"></i> تعديل
@@ -147,12 +135,12 @@ $(document).ready(function() {
         var id = $(this).data('id');
         var status = $(this).data('status');
         $.ajax({
-            url: "{{ route('appSlider.toggleStatus') }}",
+            url: "{{ route('gallery.toggleStatus') }}",
             type: "POST",
             data: {
                 "_token": "{{ csrf_token() }}",
                 "id": id,
-                "model": "AppSlider",
+                "model": "Gallery",
                 "status": status
             },
             success: function(response) {
@@ -165,7 +153,7 @@ $(document).ready(function() {
         e.preventDefault();
         var formData = new FormData($('#store-form')[0]);
         $.ajax({
-            url: "{{ route('appSlider.create') }}",
+            url: "{{ route('gallery.create') }}",
             type: 'POST',
             data: formData,
             processData: false,
@@ -192,17 +180,17 @@ $(document).ready(function() {
         });
     });
 
-    $(document).on("click", ".delete-category", function () {
+    $(document).on("click", ".delete-gallery", function () {
         var itemId = $(this).data('id');
         $("#deleteModal").modal('show');
         $("#confirmDelete").on("click", function () {
             $.ajax({
                 type: 'DELETE',
-                url: "{{ route('appSlider.destroy') }}",
+                url: "{{ route('gallery.destroy') }}",
                 data: {
                     '_token': '{{ csrf_token() }}',
                     'id': itemId,
-                    'model': "AppSlider"
+                    'model': "Gallery"
                 },
                 success: function(data) {
                     $("#deleteModal").modal('hide');

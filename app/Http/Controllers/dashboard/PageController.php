@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers\dashboard;
 use App\Http\Controllers\Controller;
-
-use App\Http\Controllers\Api\BookController;
-use App\Models\Book\Author;
-use App\Models\Book\AuthorRating;
-use App\Models\Page;
+use App\Models\App\Page;
 use Illuminate\Http\Request;
 
 class PageController extends Controller

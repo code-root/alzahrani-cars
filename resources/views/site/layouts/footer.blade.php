@@ -6,15 +6,15 @@
                     <div class="eman-footer-widget">
                         <div class="logo">
                             <a href="index-2.html">
-                                <img class="logo-light" src="assets/site/images/logo/logo-light-2.png" alt="Corporate Logo">
+                                <img class="logo-light" src="{{ asset('storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="Corporate Logo">
                             </a>
                         </div>
-                        <p class="description">Lorem ipsum dolor amet consecto adi pisicing elit sed eiusm tempor incidid unt labore dolore.</p>
+                        <p class="description">{{ $settings['footer_description'] ?? 'Default footer description' }}</p>
                         <div class="widget-information">
                             <ul class="information-list">
                                 <li><span>Add:</span>70-80 Upper St Norwich NR2</li>
-                                <li><span>Call:</span><a href="tel:+011235641231">+01 123 5641 231</a></li>
-                                <li><span>Email:</span><a href="mailto:info@al-eman-.com" target="_blank">info@al-eman-.com</a></li>
+                                <li><span>Call:</span><a href="tel:{{ $settings['phone'] ?? '+01 123 5641 231' }}">{{ $settings['phone'] ?? '+01 123 5641 231' }}</a></li>
+                                <li><span>Email:</span><a href="mailto:{{ $settings['email'] ?? 'info@al-eman-.com' }}" target="_blank">{{ $settings['email'] ?? 'info@al-eman-.com' }}</a></li>
                             </ul>
                         </div>
                     </div>

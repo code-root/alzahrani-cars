@@ -5,7 +5,7 @@
                 <div class="about-content">
                     <div class="section-title section-left">
                         <span class="pre-title">About Us</span>
-                        <h2 class="title">We Provide Best <span class="color-primary">Education</span> Services For You</h2>
+                        <h2 class="title">{{ $settings['about_intro'] ?? 'We Provide Best Education Services For You' }}</h2>
                         <span class="shape-line"><i class="icon-19"></i></span>
                     </div>
                     <ul class="nav nav-tabs" role="tablist">
@@ -21,25 +21,13 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="about-edu" role="tabpanel">
-                            <p>Magna aliquaenim minim veniam quis nostrud exercitation ullamco laborisLorem ipsum dolor sit amet consectetur adipisicing elit sed do eius tempor incididunt labore.</p>
-                            <ul class="features-list">
-                                <li>Education award achived</li>
-                                <li>Available online courses</li>
-                            </ul>
+                            <p>{{ $settings['about_intro'] ?? 'Default introduction text.' }}</p>
                         </div>
                         <div class="tab-pane fade" id="about-mission" role="tabpanel">
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
-                            <ul class="features-list">
-                                <li>Industry Expert Instructor</li>
-                                <li>Up-to-Date Course Content</li>
-                            </ul>
+                            <p>{{ $settings['about_mission'] ?? 'Default mission text.' }}</p>
                         </div>
                         <div class="tab-pane fade" id="about-vision" role="tabpanel">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer.</p>
-                            <ul class="features-list">
-                                <li>Online Remote Learning</li>
-                                <li>Lifetime Access For Learning</li>
-                            </ul>
+                            <p>{{ $settings['about_vision'] ?? 'Default vision text.' }}</p>
                         </div>
                     </div>
                 </div>

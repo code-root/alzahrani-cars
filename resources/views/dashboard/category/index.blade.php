@@ -20,19 +20,19 @@
         </div>
         @endif
         <h4 class="py-3 mb-4">
-            <span class="text-muted fw-light">AppSlider</span>
+            <span class="text-muted fw-light">Categories</span>
         </h4>
         <div class="card">
             <div class="card-header">
                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
                     <div class="card-header flex-column flex-md-row">
                         <div class="head-label text-center">
-                            <h5 class="card-title mb-0">Data Table AppSlider</h5>
+                            <h5 class="card-title mb-0">Data Table Categories</h5>
                         </div>
                         <div class="dt-action-buttons text-end pt-3 pt-md-0">
                             <div class="dt-buttons">
                                 <a class="send-model dt-button create-new btn btn-primary waves-effect waves-light" tabindex="0" type="button" data-bs-toggle="offcanvas" data-bs-target="#add-new-record">
-                                    <span><i class="mdi mdi-plus me-sm-1"></i> <span class="d-none d-sm-inline-block">Add New App Slider</span></span>
+                                    <span><i class="mdi mdi-plus me-sm-1"></i> <span class="d-none d-sm-inline-block">Add New Category</span></span>
                                 </a>
                             </div>
                         </div>
@@ -40,10 +40,9 @@
                     <table id="data-x" class="table border-top dataTable dtr-column">
                         <thead>
                             <tr>
-                                <th>Image</th>
                                 <th>Name (Arabic)</th>
                                 <th>Name (English)</th>
-                                <th>Details</th>
+                                <th>Slug</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -60,13 +59,13 @@
 <!-- Modal to add new record -->
 <div class="offcanvas offcanvas-end " id="add-new-record">
     <div class="offcanvas-header border-bottom">
-        <h5 class="offcanvas-title" id="exampleModalLabel">New AppSlider</h5>
+        <h5 class="offcanvas-title" id="exampleModalLabel">New Category</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body flex-grow-1">
         <div id="error-messages"></div>
         
-        {{ Form::open(['route' => ['appSlider.create'],'id'=>'store-form' , 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
+        {{ Form::open(['route' => ['category.create'],'id'=>'store-form' , 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
         
         <!-- حقل الاسم باللغة العربية -->
         {{ Form::label('name_ar', 'Name AR') }}
@@ -76,13 +75,9 @@
         {{ Form::label('name_en', 'Name EN') }}
         {{ Form::text('name_en', null, ['class' => 'form-control']) }}
         
-        <!-- حقل الصورة -->
-        {{ Form::label('image', 'Image') }}
-        {{ Form::file('image', ['id' => 'image', 'name' => 'image', 'class' => 'form-control']) }}
-        
-        <!-- حقل التفاصيل -->
-        {{ Form::label('details', 'Details') }}
-        {{ Form::textarea('details', null, ['class' => 'form-control']) }}
+        <!-- حقل السلاج -->
+        {{ Form::label('slug', 'Slug') }}
+        {{ Form::text('slug', null, ['class' => 'form-control']) }}
         
         <!-- حقل الحالة -->
         {{ Form::label('status', 'Status') }}
@@ -110,25 +105,18 @@ $(document).ready(function() {
         processing: true,
         serverSide: true,
         ajax: {
-            url: "{{ route('appSlider.data') }}",
+            url: "{{ route('category.data') }}",
             type: 'GET'
         },
         columns: [
-            {
-                data: 'image',
-                render: function(data, type, row) {
-                    var imgSrc = data ? '/storage/' + data : 'https://ui-avatars.com/api/?name=' + row.name_en;
-                    return '<img src="' + imgSrc + '" class="img-thumbnail" width="50px">';
-                }
-            },
             { data: 'name_ar' },
             { data: 'name_en' },
-            { data: 'details' },
+            { data: 'slug' },
             { data: 'status' },
             {
                 data: 'id',
                 render: function(data, type, row) {
-                    var editUrl = `{{ route("appSlider.edit", ":id") }}`.replace(':id', data);
+                    var editUrl = `{{ route("category.edit", ":id") }}`.replace(':id', data);
                     return `
                         <a href="${editUrl}" class="dropdown-item" data-id="${data}">
                             <i class="fa fa-pencil"></i> تعديل
@@ -147,12 +135,12 @@ $(document).ready(function() {
         var id = $(this).data('id');
         var status = $(this).data('status');
         $.ajax({
-            url: "{{ route('appSlider.toggleStatus') }}",
+            url: "{{ route('category.toggleStatus') }}",
             type: "POST",
             data: {
                 "_token": "{{ csrf_token() }}",
                 "id": id,
-                "model": "AppSlider",
+                "model": "Category",
                 "status": status
             },
             success: function(response) {
@@ -165,7 +153,7 @@ $(document).ready(function() {
         e.preventDefault();
         var formData = new FormData($('#store-form')[0]);
         $.ajax({
-            url: "{{ route('appSlider.create') }}",
+            url: "{{ route('category.create') }}",
             type: 'POST',
             data: formData,
             processData: false,
@@ -198,11 +186,11 @@ $(document).ready(function() {
         $("#confirmDelete").on("click", function () {
             $.ajax({
                 type: 'DELETE',
-                url: "{{ route('appSlider.destroy') }}",
+                url: "{{ route('category.destroy') }}",
                 data: {
                     '_token': '{{ csrf_token() }}',
                     'id': itemId,
-                    'model': "AppSlider"
+                    'model': "Category"
                 },
                 success: function(data) {
                     $("#deleteModal").modal('hide');

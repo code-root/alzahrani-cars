@@ -9,206 +9,88 @@
                 <div class="app-brand demo ">
                     <a href="" class="app-brand-link">
                         <span class="app-brand-logo demo">
-                        </span><span class="app-brand-text demo menu-text fw-bold ms-2">Amashreqe</span></a>
+                        </span><span class="app-brand-text demo menu-text fw-bold ms-2">alzahrani-cars</span></a>
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
                         <i class="bx bx-chevron-left bx-sm align-middle"></i></a>
                 </div>
 
                 <div class="menu-inner-shadow"></div>
 
-
-
                 <ul class="menu-inner py-1">
                     <!-- Dashboards -->
                     <li class="menu-item">
                         <a href="{{ route('dashboard-index') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                          <div class="text-truncate" data-i18n="Dashboards">Dashboards</div>
+                            <div class="text-truncate" data-i18n="Dashboards">لوحة القيادة</div>
                         </a>
                     </li>
 
-                    {{-- <li class="menu-item">
-        <a href="{{ route('app.slider.index') }}" class="menu-link">
-          <div class="text-truncate" data-i18n="App Slider">App Slider</div>
-        </a>
-      </li> --}}
-
                     <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons fa-solid fa-cube"></i>
-                            <div class="text-truncate" data-i18n="Packages">Packages</div>
+                        <a href="{{ route('appSlider.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-slider"></i>
+                            <div class="text-truncate" data-i18n="App Slider">شريط التطبيق</div>
                         </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ route('packages.index') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="list">list</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ route('packages.create') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Add">Add</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ route('packages.sales') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="sales">sales</div>
-                                </a>
-                            </li>
-                            
-                        </ul>
                     </li>
 
+                    <!-- Gallery -->
                     <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class='menu-icon tf-icons bx bx-check-shield'></i>
-                            <div class="text-truncate" data-i18n="Roles & Permissions">Roles & Permissions</div>
+                        <a href="{{ route('gallery.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-image"></i>
+                            <div class="text-truncate" data-i18n="Gallery">معرض الصور</div>
                         </a>
-
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ route('users.index') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Users">Users</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ route('users.create') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Create Users">Users</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ route('roles.index') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Permission">Permission</div>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
 
+                    <!-- Category -->
                     <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-user"></i>
-                            <div class="text-truncate" data-i18n="Users App">Users</div>
+                        <a href="{{ route('category.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-category"></i>
+                            <div class="text-truncate" data-i18n="Category">الفئات</div>
                         </a>
-                        <ul class="menu-sub">
+                    </li>
 
-                            <li class="menu-item">
-                                <a href="{{ route('userApp.index') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="List">List</div>
-                                </a>
-                            </li>
-
-                        </ul>
+                    <!-- Settings -->
+                    <li class="menu-item">
+                        <a href="{{ route('settings.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-cog"></i>
+                            <div class="text-truncate" data-i18n="Settings">الإعدادات</div>
+                        </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-edit"></i>
-                            <div class="text-truncate" data-i18n="settings">settings</div>
+                            <div class="text-truncate" data-i18n="settings">الإعدادات</div>
                         </a>
                         
                         <ul class="menu-sub">
-                            <li class="menu-item ">
+                            <li class="menu-item">
                                 <a href="{{ route('homepagesettings.edit') }}" class="menu-link">
-                                <div class="text-truncate" data-i18n="Features Home">Features</div>
+                                    <i class="menu-icon tf-icons bx bx-cog"></i>
+                                    <div class="text-truncate" data-i18n="Features Home">الميزات</div>
                                 </a>
                             </li> 
 
-                            <li class="menu-item ">
+                            <li class="menu-item">
                                 <a href="{{ route('success_partners.index') }}" class="menu-link">
-                                <div class="text-truncate" data-i18n="Partners">Success Partners</div>
+                                    <i class="menu-icon tf-icons bx bx-handshake"></i>
+                                    <div class="text-truncate" data-i18n="Partners">شركاء النجاح</div>
                                 </a>
                             </li> 
 
                             <li class="menu-item">
                                 <a href="{{ route('translations.index') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Translations">translations</div>
+                                    <i class="menu-icon tf-icons bx bx-translate"></i>
+                                    <div class="text-truncate" data-i18n="Translations">الترجمات</div>
                                 </a>
                             </li>
-                            <li class="menu-item ">
+                            <li class="menu-item">
                                 <a href="{{ route('pages.index') }}" class="menu-link">
-                                <div class="text-truncate" data-i18n="Pages">Pages</div>
+                                    <i class="menu-icon tf-icons bx bx-file"></i>
+                                    <div class="text-truncate" data-i18n="Pages">الصفحات</div>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class='menu-icon tf-icons  bx bxs-category'></i>
-                            <div class="text-truncate" data-i18n="Categories">Categories</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ route('query.index', ['model' => 'Category']) }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Category">Category</div>
-                                </a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="{{ route('query.index', ['model' => 'Author']) }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Author">Author</div>
-                                </a>
-                            </li>
-
-                            
-                            <li class="menu-item">
-                                <a href="{{ route('uploaded.category') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="upload Category">upload Excel Category</div>
-                                </a>
-                            </li>
-                            
-                            <li class="menu-item">
-                                <a href="{{ route('query.index', ['model' => 'Publisher']) }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Publisher">Publisher</div>
-                                </a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="{{ route('query.index', ['model' => 'Keyword']) }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Keyword">Keyword</div>
-                                </a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="{{ route('query.index', ['model' => 'Series']) }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Series">Series</div>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class='menu-icon tf-icons  bx bxs-book-reader'></i>
-                            <div class="text-truncate" data-i18n="Book">Book</div>
-                        </a>
-                        
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ route('book.index') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="All book">All Book</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ route('book.add.one') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Add Book">All Book</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ route('upload.book') }}" class="menu-link">
-                        <i class='menu-icon tf-icons  bx bx-cloud-upload'></i>
-                                    <div class="text-truncate" data-i18n="Upload Book">json</div>
-                                </a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="{{ route('book.files') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Uolode Files & covers">Uolode Files</div>
-                                </a>
-                            </li>
-
-                    </li>
-               
                 </ul>
             </aside>
             <!-- / Menu -->
@@ -222,7 +104,6 @@
                         </a>
                     </div>
 
-
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                         <!-- Search -->
                         <div class="navbar-nav align-items-center">
@@ -235,43 +116,7 @@
                         </div>
                         <!-- /Search -->
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-
-
-
-                            <!-- Quick links  -->
-                            <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                                    <i class='bx bx-grid-alt bx-sm'></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end py-0">
-                                    <div class="dropdown-menu-header border-bottom">
-                                        <div class="dropdown-header d-flex align-items-center py-3">
-                                            <h5 class="text-body mb-0 me-auto">Shortcuts</h5>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-shortcuts-list scrollable-container">
-                                        @foreach($shortcuts as $shortcut)
-                                        <div class="dropdown-shortcuts-item row row-bordered g-0">
-                                            <div class="col-2">
-                                                <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle">
-                                                    <i class="{{ $shortcut['icon'] }} fs-4"></i>
-                                                </span>
-                                            </div>
-                                            <div class="col-8">
-                                                <a href="{{ $shortcut['route'] }}" class="stretched-link">{{ $shortcut['title'] }}</a>
-                                                {{-- <small class="text-muted mb-0">{{ $shortcut['description'] }}</small> --}}
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </li>
-                            
                             <!-- Quick links -->
-
-
                             <!-- Style Switcher -->
                             <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
@@ -334,29 +179,11 @@
                                 </ul>
                             </li>
                             <!--/ User -->
-
                         </ul>
                     </div>
-
-
-                    <!-- Search Small Screens -->
-                    <div class="navbar-search-wrapper search-input-wrapper  d-none">
-                        <input type="text" class="form-control search-input container-xxl border-0"
-                            placeholder="Search..." aria-label="Search...">
-                        <i class="bx bx-x bx-sm search-toggler cursor-pointer"></i>
-                    </div>
-
-
                 </nav>
-
-
-
                 <!-- / Navbar -->
-
                 @yield('body')
-
-
-
 
                 @yield('footer')
             @endsection

@@ -48,8 +48,8 @@
                 <div class="header-top">
                     <div class="logo">
                         <a href="index-2.html">
-                            <img class="logo-light" src="assets/site/images/logo/logo-dark.png" alt="Corporate Logo">
-                            <img class="logo-dark" src="assets/site/images/logo/logo-white.png" alt="Corporate Logo">
+                            <img class="logo-light" src="{{ asset('storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{ $settings['site_name'] ?? 'My Website' }}">
+                            <img class="logo-dark" src="{{ asset('storage/' . ($settings['logo'] ?? 'default-logo.png')) }}g" alt="{ $settings['site_name'] ?? 'My Website' }}">
                         </a>
                     </div>
                     <div class="close-menu">
