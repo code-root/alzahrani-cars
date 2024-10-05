@@ -71,41 +71,23 @@
                             <div class="text-truncate" data-i18n="Contact Messages">رسائل التواصل</div>
                         </a>
                     </li>
-
+                    <li class="menu-item">
+                        <a href="{{ route('success_partners.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-handshake"></i>
+                            <div class="text-truncate" data-i18n="Partners">شركاء النجاح</div>
+                        </a>
+                    </li> 
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-edit"></i>
                             <div class="text-truncate" data-i18n="settings">الإعدادات</div>
                         </a>
-                        
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ route('homepagesettings.edit') }}" class="menu-link">
-                                    <i class="menu-icon tf-icons bx bx-cog"></i>
-                                    <div class="text-truncate" data-i18n="Features Home">الميزات</div>
-                                </a>
-                            </li> 
-
-                            <li class="menu-item">
-                                <a href="{{ route('success_partners.index') }}" class="menu-link">
-                                    <i class="menu-icon tf-icons bx bx-handshake"></i>
-                                    <div class="text-truncate" data-i18n="Partners">شركاء النجاح</div>
-                                </a>
-                            </li> 
-
-                            <li class="menu-item">
-                                <a href="{{ route('translations.index') }}" class="menu-link">
-                                    <i class="menu-icon tf-icons bx bx-translate"></i>
-                                    <div class="text-truncate" data-i18n="Translations">الترجمات</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ route('pages.index') }}" class="menu-link">
-                                    <i class="menu-icon tf-icons bx bx-file"></i>
-                                    <div class="text-truncate" data-i18n="Pages">الصفحات</div>
-                                </a>
-                            </li>
-                        </ul>
+                        <li class="menu-item">
+                            <a href="{{ route('pages.index') }}" class="menu-link">
+                                <i class="menu-icon tf-icons bx bx-file"></i>
+                                <div class="text-truncate" data-i18n="Pages">الصفحات</div>
+                            </a>
+                        </li>
                     </li>
                 </ul>
             </aside>

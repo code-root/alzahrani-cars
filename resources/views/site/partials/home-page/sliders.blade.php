@@ -3,18 +3,16 @@
         <div class="swiper-wrapper">
             @foreach($sliders as $slider)
             <div class="swiper-slide">
-                <img data-transform-origin='center center' data-src="{{ asset('storage/' . $slider->image) }}" class="swiper-lazy" alt="image">
+                <img data-transform-origin='center center' data-src="{{ asset('/back-end/storage/' . $slider->image) }}" class="swiper-lazy" alt="image">
                 <div class="thumbnail-bg-content">
                     <div class="container al-eman--animated-shape">
                         <div class="row">
                             <div class="col-7">
                                 <div class="banner-content">
-                                    <span class="subtitle" data-sal="slide-up" data-sal-duration="1000">{{ $slider->subtitle }}</span>
-                                    <h1 class="title" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">{{ $slider->title }}</h1>
-                                    <p data-sal-delay="200" data-sal="slide-up" data-sal-duration="1000">{{ $slider->description }}</p>
-                                    <div class="banner-btn" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
-                                        <a href="{{ $slider->link }}" class="eman-btn btn-secondary">Find courses <i class="icon-4"></i></a>
-                                    </div>
+                                    <span class="subtitle" data-sal="slide-up" data-sal-duration="1000">{{ $slider->name_ar }}</span>
+                                    <h1 class="title" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">{{ $slider->name_en }}</h1>
+                                    <p data-sal-delay="200" data-sal="slide-up" data-sal-duration="1000">{{ $slider->details }}</p>
+
                                 </div>
                             </div>
                         </div>

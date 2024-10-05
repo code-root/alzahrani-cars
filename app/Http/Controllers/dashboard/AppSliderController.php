@@ -112,6 +112,7 @@ class AppSliderController extends Controller
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
+     
         $data = $request->only(['name_ar', 'name_en', 'details', 'status']);
         if ($request->hasFile('image')) {
             $image = $request->file('image');

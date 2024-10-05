@@ -18,8 +18,9 @@
                     <div class="header-brand">
                         <div class="logo">
                             <a href="{{ url('/') }}">
-                                <img class="logo-light" src="{{ asset('storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}">
-                                <img class="logo-dark" src="{{ asset('storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}">
+                                
+                                <img class="logo-light" src="{{ asset('/back-end/storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}"style="width: 13rem;">
+                                <img class="logo-dark" src="{{ asset('/back-end/storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}"style="width: 13rem;">
                             </a>
                         </div>
                     </div>
@@ -42,8 +43,8 @@
                 <div class="header-top">
                     <div class="logo">
                         <a href="{{ url('/') }}">
-                            <img class="logo-light" src="{{ asset('storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}">
-                            <img class="logo-dark" src="{{ asset('storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}">
+                            <img class="logo-light" src="{{ asset('/back-end/storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}">
+                            <img class="logo-dark" src="{{ asset('/back-end/storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}">
                         </a>
                     </div>
                     <div class="close-menu">

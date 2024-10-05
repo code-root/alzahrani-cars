@@ -98,6 +98,25 @@
     </div>
 </div>
 
+<!-- Modal for delete confirmation -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">تأكيد الحذف</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                هل أنت متأكد أنك تريد حذف هذا العنصر؟
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <button type="button" class="btn btn-danger" id="confirmDelete">حذف</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section('footer')
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script src="{{ asset('assets/app-assets/vendors/js/extensions/sweetalert.min.js') }}"></script>
@@ -117,7 +136,7 @@ $(document).ready(function() {
             {
                 data: 'image',
                 render: function(data, type, row) {
-                    var imgSrc = data ? '/storage/' + data : 'https://ui-avatars.com/api/?name=' + row.name_en;
+                    var imgSrc = data ? '/back-end/storage/' + data : 'https://ui-avatars.com/api/?name=' + row.name_en;
                     return '<img src="' + imgSrc + '" class="img-thumbnail" width="50px">';
                 }
             },
@@ -135,6 +154,9 @@ $(document).ready(function() {
                         </a>
                         <a href="#" class="dropdown-item toggle-status" data-id="${data}" data-status="${row.status}">
                             <i class="fa fa-toggle-${row.status == 1 ? 'on' : 'off'}"></i> ${row.status == 1 ? 'تعطيل' : 'تمكين'}
+                        </a>
+                        <a href="#" class="dropdown-item delete-slider" data-id="${data}">
+                            <i class="fa fa-trash"></i> حذف
                         </a>
                     `;
                 }
@@ -192,10 +214,11 @@ $(document).ready(function() {
         });
     });
 
-    $(document).on("click", ".delete-category", function () {
+    $('#data-x').on('click', '.delete-slider', function(e) {
+        e.preventDefault();
         var itemId = $(this).data('id');
         $("#deleteModal").modal('show');
-        $("#confirmDelete").on("click", function () {
+        $("#confirmDelete").off('click').on("click", function () {
             $.ajax({
                 type: 'DELETE',
                 url: "{{ route('appSlider.destroy') }}",

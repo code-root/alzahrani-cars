@@ -6,6 +6,7 @@ use App\Http\Controllers\dashboard\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Setting;
 
 use App\Models\App\Page;
 
@@ -41,6 +42,13 @@ class AppServiceProvider extends ServiceProvider
             $pages = Page::all();
             $view->with('pages', $pages);
         });
+
+        view()->composer('site.layouts.app',
+        function ($view) {
+            $settings = Setting::pluck('value', 'slug')->toArray();
+            $view->with('settings', $settings);
+        });
+
     }
 
 

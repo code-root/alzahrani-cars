@@ -10,7 +10,7 @@
                     </div>
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#about-edu" type="button" role="tab" aria-selected="true">About al-eman-</button>
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#about-edu" type="button" role="tab" aria-selected="true">About {{ $settings['site_name'] ?? '' }}</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" data-bs-toggle="tab" data-bs-target="#about-mission" type="button" role="tab" aria-selected="false">Our Mission</button>
@@ -34,8 +34,8 @@
             </div>
             <div class="col-lg-6">
                 <div class="about-image-gallery">
-                    <img class="main-img-1" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800" src="assets/site/images/about/about-04.webp" alt="About Image">
-                    <img class="main-img-2" data-sal-delay="100" data-sal="slide-left" data-sal-duration="800" src="assets/site/images/about/about-05.webp" alt="About Image">
+                    <img class="main-img-1" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800" src="/a-1.jpeg" alt="About Image">
+                    <img class="main-img-2" data-sal-delay="100" data-sal="slide-left" data-sal-duration="800" src="/a-2.jpeg" alt="About Image">
                     <ul class="shape-group">
                         <li class="shape-1 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
                             <img data-depth="2" src="assets/site/images/about/shape-13.png" alt="Shape">

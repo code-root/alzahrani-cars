@@ -6,7 +6,7 @@
                     <div class="eman-footer-widget">
                         <div class="logo">
                             <a href="index-2.html">
-                                <img class="logo-light" src="{{ asset('storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="Corporate Logo">
+                                <img class="logo-light" src="{{ asset('/back-end/storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="Corporate Logo">
                             </a>
                         </div>
                         <p class="description">{{ $settings['footer_description'] ?? 'Default footer description' }}</p>

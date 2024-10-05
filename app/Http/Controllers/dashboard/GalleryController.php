@@ -37,7 +37,7 @@ class GalleryController extends Controller
         $imagePath = $request->file('image')->store('galleries', 'public');
 
         Gallery::create([
-            'image' => $imagePath,
+            'image' => '/app/public/'.$imagePath,
             'status' => $request->status,
             'category_id' => $request->category_id,
         ]);

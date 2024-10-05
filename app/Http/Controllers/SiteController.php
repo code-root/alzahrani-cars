@@ -6,10 +6,8 @@ use App\Models\App\AppSlider;
 use App\Models\App\Page;
 use App\Models\Setting;
 use App\Models\Category;
-use App\Models\Gallery;
-use App\Models\Faq; // تأكد من استيراد موديل Faq
-use App\Models\SuccessPartner; // تأكد من استيراد موديل SuccessPartner
-use Illuminate\Http\Request;
+use App\Models\Faq;
+use App\Models\SuccessPartner;
 
 class SiteController extends Controller
 {

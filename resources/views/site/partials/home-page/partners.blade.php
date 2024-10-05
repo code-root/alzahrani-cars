@@ -13,7 +13,7 @@
                     <div class="inner">
                         <div class="thumbnail-wrap">
                             <div class="thumbnail">
-                                <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->name }}">
+                                <img src="{{ route('api.image.partners') }}?id={{  $partner->id }}" alt="{{ $partner->name }}">
                             </div>
                         </div>
                         <div class="content">

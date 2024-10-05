@@ -38,7 +38,7 @@ class SettingsController extends Controller
 
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->store('logos', 'public');
-            $settingsData['logo'] = $logoPath;
+            $settingsData['logo'] = '/app/public/'.$logoPath;
         }
 
         foreach ($settingsData as $slug => $value) {
