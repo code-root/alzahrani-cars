@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +7,21 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/site/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/site/images/favicon.png">
     <!-- CSS
 	============================================ -->
-    <link rel="stylesheet" href="assets/site/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/site/css/vendor/icomoon.css">
-    <link rel="stylesheet" href="assets/site/css/vendor/remixicon.css">
-    <link rel="stylesheet" href="assets/site/css/vendor/magnifypopup.min.css">
-    <link rel="stylesheet" href="assets/site/css/vendor/odometer.min.css">
-    <link rel="stylesheet" href="assets/site/css/vendor/lightbox.min.css">
-    <link rel="stylesheet" href="assets/site/css/vendor/animation.min.css">
+    <link rel="stylesheet" href="/assets/site/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/site/css/vendor/icomoon.css">
+    <link rel="stylesheet" href="/assets/site/css/vendor/remixicon.css">
+    <link rel="stylesheet" href="/assets/site/css/vendor/magnifypopup.min.css">
+    <link rel="stylesheet" href="/assets/site/css/vendor/odometer.min.css">
+    <link rel="stylesheet" href="/assets/site/css/vendor/lightbox.min.css">
+    <link rel="stylesheet" href="/assets/site/css/vendor/animation.min.css">
     <link rel="stylesheet" href="https://edublink.html.devsblink.com/assets/css/vendor/jqueru-ui-min.css">
-    <link rel="stylesheet" href="assets/site/css/vendor/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/site/css/vendor/tipped.min.css">
+    <link rel="stylesheet" href="/assets/site/css/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/site/css/vendor/tipped.min.css">
     <!-- Site Stylesheet -->
-    <link rel="stylesheet" href="assets/site/css/app.css">
+    <link rel="stylesheet" href="/assets/site/css/app.css">
 </head>
 
         

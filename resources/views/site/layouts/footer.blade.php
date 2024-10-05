@@ -12,43 +12,13 @@
                         <p class="description">{{ $settings['footer_description'] ?? 'Default footer description' }}</p>
                         <div class="widget-information">
                             <ul class="information-list">
-                                <li><span>Add:</span>70-80 Upper St Norwich NR2</li>
                                 <li><span>Call:</span><a href="tel:{{ $settings['phone'] ?? '+01 123 5641 231' }}">{{ $settings['phone'] ?? '+01 123 5641 231' }}</a></li>
                                 <li><span>Email:</span><a href="mailto:{{ $settings['email'] ?? 'info@al-eman-.com' }}" target="_blank">{{ $settings['email'] ?? 'info@al-eman-.com' }}</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="eman-footer-widget explore-widget">
-                        <h4 class="widget-title">Online Platform</h4>
-                        <div class="inner">
-                            <ul class="footer-link link-hover">
-                                <li><a href="about-one.html">About</a></li>
-                                <li><a href="course-one.html">Courses</a></li>
-                                <li><a href="team-one.html">Instructor</a></li>
-                                <li><a href="event-grid.html">Events</a></li>
-                                <li><a href="team-details.html">Instructor Profile</a></li>
-                                <li><a href="purchase-guide.html">Purchase Guide</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-6">
-                    <div class="eman-footer-widget quick-link-widget">
-                        <h4 class="widget-title">Links</h4>
-                        <div class="inner">
-                            <ul class="footer-link link-hover">
-                                <li><a href="contact-us.html">Contact Us</a></li>
-                                <li><a href="gallery-grid.html">Gallery</a></li>
-                                <li><a href="blog-standard.html">News & Articles</a></li>
-                                <li><a href="faq.html">FAQ's</a></li>
-                                <li><a href="my-account.html">Sign In/Registration</a></li>
-                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-lg-4 col-md-6">
                     <div class="eman-footer-widget">
                         <h4 class="widget-title">Contacts</h4>
@@ -76,7 +46,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner text-center">
-                        <p>Copyright 2024 <a href="https://1.envato.market/5bQ022" target="_blank">al-eman-</a> Designed By <a href="https://1.envato.market/YgGJbj" target="_blank">DevsBlink</a>. All Rights Reserved</p>
+                        <p>Copyright 2024 <a href="" target="_blank">Mostafa Elbagory </a> Designed By <a href="https://wa.me/201001995914" target="_blank">CodeRoot</a>. All Rights Reserved</p>
                     </div>
                 </div>
             </div>

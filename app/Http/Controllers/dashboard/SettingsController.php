@@ -25,9 +25,16 @@ class SettingsController extends Controller
             'about_intro' => 'nullable|string',
             'about_mission' => 'nullable|string',
             'about_vision' => 'nullable|string',
+            'faq_pre_title' => 'nullable|string|max:255',
+            'faq_title' => 'nullable|string|max:255',
+            'faq_description' => 'nullable|string',
         ]);
 
-        $settingsData = $request->only(['site_name', 'phone', 'email', 'footer_description', 'about_intro', 'about_mission', 'about_vision']);
+        $settingsData = $request->only([
+            'site_name', 'phone', 'email', 'footer_description', 
+            'about_intro', 'about_mission', 'about_vision',
+            'faq_pre_title', 'faq_title', 'faq_description'
+        ]);
 
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->store('logos', 'public');
@@ -36,8 +43,8 @@ class SettingsController extends Controller
 
         foreach ($settingsData as $slug => $value) {
             Setting::updateOrCreate(
-                ['slug' => $slug], // البحث عن السجل باستخدام الـ slug
-                ['value' => $value] // تحديث القيمة أو إضافتها إذا لم تكن موجودة
+                ['slug' => $slug],
+                ['value' => $value]
             );
         }
 

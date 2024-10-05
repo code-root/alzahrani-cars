@@ -61,6 +61,16 @@
                 {{ Form::label('about_vision', 'About Us - Vision') }}
                 {{ Form::textarea('about_vision', $settings['about_vision'] ?? '', ['class' => 'form-control']) }}
 
+                <!-- إعدادات الأسئلة الشائعة -->
+                {{ Form::label('faq_pre_title', 'FAQ Pre-title') }}
+                {{ Form::text('faq_pre_title', $settings['faq_pre_title'] ?? '', ['class' => 'form-control']) }}
+
+                {{ Form::label('faq_title', 'FAQ Title') }}
+                {{ Form::text('faq_title', $settings['faq_title'] ?? '', ['class' => 'form-control']) }}
+
+                {{ Form::label('faq_description', 'FAQ Description') }}
+                {{ Form::textarea('faq_description', $settings['faq_description'] ?? '', ['class' => 'form-control']) }}
+
                 <br>
                 <button type="button" class="btn btn-primary" id="submitSettings">Submit</button>
                 @csrf

@@ -3,11 +3,11 @@
 namespace App\Providers;
 
 use App\Http\Controllers\dashboard\AdminController;
-use App\Models\Page;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
+use App\Models\App\Page;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,13 +30,17 @@ class AppServiceProvider extends ServiceProvider
             $adminController = new AdminController();
             $view->with('loginUser', Auth::user());
         });
-
+        
         view()->composer('home.layouts.footer',
         function ($view) {
             $pages = Page::all();
             $view->with('pages', $pages);
         });
-
+        view()->composer('site.layouts.navbar',
+        function ($view) {
+            $pages = Page::all();
+            $view->with('pages', $pages);
+        });
     }
 
 

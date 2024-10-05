@@ -48,11 +48,27 @@
                         </a>
                     </li>
 
+                    <!-- FAQ -->
+                    <li class="menu-item">
+                        <a href="{{ route('faq.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-question-mark"></i>
+                            <div class="text-truncate" data-i18n="FAQ">الأسئلة الشائعة</div>
+                        </a>
+                    </li>
+
                     <!-- Settings -->
                     <li class="menu-item">
                         <a href="{{ route('settings.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-cog"></i>
                             <div class="text-truncate" data-i18n="Settings">الإعدادات</div>
+                        </a>
+                    </li>
+
+                    <!-- Contact Messages -->
+                    <li class="menu-item">
+                        <a href="{{ route('contacts.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-envelope"></i>
+                            <div class="text-truncate" data-i18n="Contact Messages">رسائل التواصل</div>
                         </a>
                     </li>
 

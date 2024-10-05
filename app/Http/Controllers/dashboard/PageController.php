@@ -44,13 +44,15 @@ class PageController extends Controller
     }
 
     
-    public function showPage(Request $request) {
-    
-        $page = Page::findOrFail($request->id);
-          $pages = Page::all();
+    public function showPage($id)
+    {
+        $pages = Page::all();
 
-        return view('home.page', compact('page' , 'pages'));
+        $page = Page::findOrFail($id);
+        return view('site.pages.index', compact('page' , 'pages'));
     }
+
+    
     public function show(Request $request) {
     
         $page = Page::findOrFail($request->id);

@@ -93,8 +93,31 @@ class SettingSeeder extends Seeder
                 'slug' => 'about_vision',
                 'title' => 'رؤية من نحن'
             ],
+            [
+                'name' => 'FAQ Pre-title',
+                'type' => 'faq',
+                'value' => 'FAq’s',
+                'page' => 'faq',
+                'slug' => 'faq_pre_title',
+                'title' => 'العنوان الفرعي للأسئلة الشائعة'
+            ],
+            [
+                'name' => 'FAQ Title',
+                'type' => 'faq',
+                'value' => 'Over 10 Years in Distant Skill Development',
+                'page' => 'faq',
+                'slug' => 'faq_title',
+                'title' => 'عنوان الأسئلة الشائعة'
+            ],
+            [
+                'name' => 'FAQ Description',
+                'type' => 'faq',
+                'value' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt labore dolore magna.',
+                'page' => 'faq',
+                'slug' => 'faq_description',
+                'title' => 'وصف الأسئلة الشائعة'
+            ],
         ];
-
         foreach ($settings as $setting) {
             Setting::create($setting);
         }
