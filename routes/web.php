@@ -91,11 +91,11 @@ Route::group(['prefix' => 'dashboard'], function () {
             Route::get('/getData', [AppSliderController::class, 'getData'])->name('appSlider.data');
             Route::post('create', [AppSliderController::class, 'create'])->name('appSlider.create');
             Route::get('/show', [AppSliderController::class, 'show'])->name('appSlider.show');
-            Route::get('/{id}/edit', [AppSliderController::class, 'edit'])->name('appSlider.edit');
+            Route::get('/{id}/edit', [AppSliderController::class, 'edit'])->name('');
             Route::put('/{id}/update', [AppSliderController::class, 'update'])->name('appSlider.update');
             Route::delete('/destroy', [AppSliderController::class, 'destroy'])->name('appSlider.destroy');
             Route::post('toggle-status', [AppSliderController::class, 'toggleStatus'])->name('appSlider.toggleStatus');
-    });
+        });
 
 
 

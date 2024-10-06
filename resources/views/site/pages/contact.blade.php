@@ -31,23 +31,24 @@
                     <div class="inner">
                         <div class="thumbnail">
                             <div class="thumb">
-                                <img src="/assets/site/images/others/contact-me.jpg" alt="Contact Me">
+                                <img src="assets/images/others/contact-me.jpg" alt="Contact Me">
                             </div>
                             <ul class="shape-group">
                                 <li class="shape-1 scene">
-                                    <img data-depth="1.4" src="/assets/site/images/about/shape-13.png" alt="Shape">
+                                    <img data-depth="1.4" src="assets/images/about/shape-13.png" alt="Shape">
                                 </li>
                                 <li class="shape-2 scene">
-                                    <img data-depth="-1.4" src="/assets/site/images/counterup/shape-02.png">
+                                    <img data-depth="-1.4" src="assets/images/counterup/shape-02.png">
                                 </li>
                                 <li class="shape-3">
-                                    <img src="/assets/site/images/about/shape-07.png" alt="Shape">
+                                    <img src="assets/images/about/shape-07.png" alt="Shape">
                                 </li>
                             </ul>
                         </div>
                         <div class="contact-us-info">
                             <h3 class="heading-title">I will Answer all Your Questions</h3>
                             <ul class="address-list">
+                          
                                 <li>
                                     <h5 class="title">Email</h5>
                                     <p><a href="mailto:edublink@example.com">edublink@example.com</a></p>
@@ -58,10 +59,30 @@
                                 </li>
                             </ul>
                             <ul class="social-share">
-                                <li><a href="#"><i class="icon-share-alt"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>
+                            @if(!empty($settings['facebook']))
+                <li><a href="{{ $settings['facebook'] }}" target="_blank"><i class="icon-facebook"></i> Facebook</a></li>
+            @endif
+            @if(!empty($settings['twitter']))
+                <li><a href="{{ $settings['twitter'] }}" target="_blank"><i class="icon-twitter"></i> Twitter</a></li>
+            @endif
+            @if(!empty($settings['instagram']))
+                <li><a href="{{ $settings['instagram'] }}" target="_blank"><i class="icon-instagram"></i> Instagram</a></li>
+            @endif
+            @if(!empty($settings['linkedin']))
+                <li><a href="{{ $settings['linkedin'] }}" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a></li>
+            @endif
+            @if(!empty($settings['youtube']))
+                <li><a href="{{ $settings['youtube'] }}" target="_blank"><i class="icon-youtube"></i> YouTube</a></li>
+            @endif
+            @if(!empty($settings['snapchat']))
+                <li><a href="{{ $settings['snapchat'] }}" target="_blank"><i class="icon-snapchat"></i> Snapchat</a></li>
+            @endif
+            @if(!empty($settings['tiktok']))
+                <li><a href="{{ $settings['tiktok'] }}" target="_blank"><i class="icon-tiktok"></i> TikTok</a></li>
+            @endif
+            @if(!empty($settings['x']))
+                <li><a href="{{ $settings['x'] }}" target="_blank"><i class="icon-x"></i> X</a></li>
+            @endif
                             </ul>
                         </div>
                     </div>
@@ -78,7 +99,7 @@
                     <div class="section-title section-center">
                         <h3 class="title">Just Drop Me a Line</h3>
                     </div>
-                    <form id="contact-form" method="POST">
+                    <form class="rnt-contact-form rwt-dynamic-form" id="contact-form" method="POST" action="{{ route('contact.store') }}">
                         @csrf
                         <div class="row row--10">
                             <div class="form-group col-lg-6">
@@ -98,7 +119,6 @@
                             </div>
                         </div>
                     </form>
-                    <div id="form-messages" class="mt-3"></div>
                 </div>
             </div>
         </div>
@@ -110,32 +130,4 @@
         <li class="shape-4 scene"></li>
     </ul>
 </section>
-
-<script>
-$(document).ready(function() {
-    $('#contact-form').on('submit', function(e) {
-        e.preventDefault();
-        $('#form-messages').html('');
-
-        $.ajax({
-            url: "{{ route('contact.store') }}",
-            type: 'POST',
-            data: $(this).serialize(),
-            success: function(response) {
-                $('#form-messages').html('<div class="alert alert-success">Your message has been sent successfully.</div>');
-                $('#contact-form')[0].reset();
-            },
-            error: function(xhr) {
-                var errors = xhr.responseJSON.errors;
-                var errorMessages = '<div class="alert alert-danger"><ul>';
-                $.each(errors, function(key, value) {
-                    errorMessages += '<li>' + value + '</li>';
-                });
-                errorMessages += '</ul></div>';
-                $('#form-messages').html(errorMessages);
-            }
-        });
-    });
-});
-</script>
 @endsection

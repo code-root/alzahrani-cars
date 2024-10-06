@@ -28,12 +28,22 @@ class SettingsController extends Controller
             'faq_pre_title' => 'nullable|string|max:255',
             'faq_title' => 'nullable|string|max:255',
             'faq_description' => 'nullable|string',
+            'facebook' => 'nullable|string|max:255',
+            'twitter' => 'nullable|string|max:255',
+            'instagram' => 'nullable|string|max:255',
+            'linkedin' => 'nullable|string|max:255',
+            'youtube' => 'nullable|string|max:255',
+            'snapchat' => 'nullable|string|max:255',
+            'tiktok' => 'nullable|string|max:255',
+            'x' => 'nullable|string|max:255',
         ]);
 
         $settingsData = $request->only([
             'site_name', 'phone', 'email', 'footer_description', 
             'about_intro', 'about_mission', 'about_vision',
-            'faq_pre_title', 'faq_title', 'faq_description'
+            'faq_pre_title', 'faq_title', 'faq_description',
+            'facebook', 'twitter', 'instagram', 'linkedin',
+            'youtube', 'snapchat', 'tiktok', 'x'
         ]);
 
         if ($request->hasFile('logo')) {

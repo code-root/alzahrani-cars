@@ -29,11 +29,30 @@
                                 <button class="eman-btn btn-secondary btn-medium" type="button">Subscribe <i class="icon-4"></i></button>
                             </div>
                             <ul class="social-share icon-transparent">
-                                <li><a href="#" class="color-fb"><i class="icon-facebook"></i></a></li>
-                                <li><a href="#" class="color-linkd"><i class="icon-linkedin2"></i></a></li>
-                                <li><a href="#" class="color-ig"><i class="icon-instagram"></i></a></li>
-                                <li><a href="#" class="color-twitter"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#" class="color-yt"><i class="icon-youtube"></i></a></li>
+                                @if(!empty($settings['facebook']))
+                                    <li><a href="{{ $settings['facebook'] }}" class="color-fb"><i class="icon-facebook"></i></a></li>
+                                @endif
+                                @if(!empty($settings['twitter']))
+                                    <li><a href="{{ $settings['twitter'] }}" class="color-twitter"><i class="icon-twitter"></i></a></li>
+                                @endif
+                                @if(!empty($settings['instagram']))
+                                    <li><a href="{{ $settings['instagram'] }}" class="color-ig"><i class="icon-instagram"></i></a></li>
+                                @endif
+                                @if(!empty($settings['linkedin']))
+                                    <li><a href="{{ $settings['linkedin'] }}" class="color-linkd"><i class="icon-linkedin2"></i></a></li>
+                                @endif
+                                @if(!empty($settings['youtube']))
+                                    <li><a href="{{ $settings['youtube'] }}" class="color-yt"><i class="icon-youtube"></i></a></li>
+                                @endif
+                                @if(!empty($settings['snapchat']))
+                                    <li><a href="{{ $settings['snapchat'] }}" class="color-snapchat"><i class="icon-snapchat"></i></a></li>
+                                @endif
+                                @if(!empty($settings['tiktok']))
+                                    <li><a href="{{ $settings['tiktok'] }}" class="color-tiktok"><i class="icon-tiktok"></i></a></li>
+                                @endif
+                                @if(!empty($settings['x']))
+                                    <li><a href="{{ $settings['x'] }}" class="color-x"><i class="icon-x"></i></a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>

@@ -16,7 +16,9 @@
     <link rel="stylesheet" type="text/css" href="https://admin.pixelstrap.com/cion/assets/css/style.css">
     <link id="color" rel="stylesheet" href="https://admin.pixelstrap.com/cion/assets/css/color-1.css" media="screen">
     <link rel="stylesheet" type="text/css" href="https://admin.pixelstrap.com/cion/assets/css/responsive.css">
-  </head>
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.cd-root.com/back-end/storage//app/public/logos/A2ghZzHNOun6FZCdste1w1PpqovvijpCI3dFVVRi.png">
+  
+</head>
   <body>
         <!-- login page start-->
         <div class="container-fluid p-0">
@@ -44,7 +46,7 @@
                         @csrf
                         <h3>Sign in to account</h3>
                         <p>Enter your email & password to login</p>
-                        <a class="logo" href=""><img class="img-fluid for-light" src="http://almashreqebookstore.com/logo.png" alt="looginpage" width="60%"><img class="img-fluid for-dark" src="/logo.png"  width="10%" alt="looginpage"></a>
+                        <a class="logo" href=""><img class="img-fluid for-light" src="https://www.cd-root.com/back-end/storage//app/public/logos/A2ghZzHNOun6FZCdste1w1PpqovvijpCI3dFVVRi.png" alt="looginpage" width="60%"><img class="img-fluid for-dark" src="/logo.png"  width="10%" alt="looginpage"></a>
 
                         <div class="form-group">
                             <label for="emailaddress">Email address</label>

@@ -71,6 +71,31 @@
                 {{ Form::label('faq_description', 'FAQ Description') }}
                 {{ Form::textarea('faq_description', $settings['faq_description'] ?? '', ['class' => 'form-control']) }}
 
+                <!-- مواقع التواصل الاجتماعي -->
+                {{ Form::label('facebook', 'Facebook') }}
+                {{ Form::text('facebook', $settings['facebook'] ?? '', ['class' => 'form-control']) }}
+
+                {{ Form::label('twitter', 'Twitter') }}
+                {{ Form::text('twitter', $settings['twitter'] ?? '', ['class' => 'form-control']) }}
+
+                {{ Form::label('instagram', 'Instagram') }}
+                {{ Form::text('instagram', $settings['instagram'] ?? '', ['class' => 'form-control']) }}
+
+                {{ Form::label('linkedin', 'LinkedIn') }}
+                {{ Form::text('linkedin', $settings['linkedin'] ?? '', ['class' => 'form-control']) }}
+
+                {{ Form::label('youtube', 'YouTube') }}
+                {{ Form::text('youtube', $settings['youtube'] ?? '', ['class' => 'form-control']) }}
+
+                {{ Form::label('snapchat', 'Snapchat') }}
+                {{ Form::text('snapchat', $settings['snapchat'] ?? '', ['class' => 'form-control']) }}
+
+                {{ Form::label('tiktok', 'TikTok') }}
+                {{ Form::text('tiktok', $settings['tiktok'] ?? '', ['class' => 'form-control']) }}
+
+                {{ Form::label('x', 'X') }}
+                {{ Form::text('x', $settings['x'] ?? '', ['class' => 'form-control']) }}
+
                 <br>
                 <button type="button" class="btn btn-primary" id="submitSettings">Submit</button>
                 @csrf

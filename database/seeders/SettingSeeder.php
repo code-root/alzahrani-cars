@@ -46,6 +46,54 @@ class SettingSeeder extends Seeder
                 'title' => 'تويتر'
             ],
             [
+                'name' => 'Instagram',
+                'type' => 'social',
+                'value' => 'https://instagram.com/example',
+                'page' => 'social',
+                'slug' => 'instagram',
+                'title' => 'إنستغرام'
+            ],
+            [
+                'name' => 'LinkedIn',
+                'type' => 'social',
+                'value' => 'https://linkedin.com/in/example',
+                'page' => 'social',
+                'slug' => 'linkedin',
+                'title' => 'لينكد إن'
+            ],
+            [
+                'name' => 'YouTube',
+                'type' => 'social',
+                'value' => 'https://youtube.com/c/example',
+                'page' => 'social',
+                'slug' => 'youtube',
+                'title' => 'يوتيوب'
+            ],
+            [
+                'name' => 'Snapchat',
+                'type' => 'social',
+                'value' => 'https://snapchat.com/add/example',
+                'page' => 'social',
+                'slug' => 'snapchat',
+                'title' => 'سناب شات'
+            ],
+            [
+                'name' => 'TikTok',
+                'type' => 'social',
+                'value' => 'https://tiktok.com/@example',
+                'page' => 'social',
+                'slug' => 'tiktok',
+                'title' => 'تيك توك'
+            ],
+            [
+                'name' => 'X',
+                'type' => 'social',
+                'value' => 'https://x.com/example',
+                'page' => 'social',
+                'slug' => 'x',
+                'title' => 'إكس'
+            ],
+            [
                 'name' => 'Site Name',
                 'type' => 'general',
                 'value' => 'My Website',

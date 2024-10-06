@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.footer')
 @extends('dashboard.layouts.navbar')
 @section('body')
-<script src="https://cdn.tiny.cloud/1/b66sjles11cpifyj7zlvrqgbn61uowpdfcnacdn4z7r25sur/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/dnxp1lzhvu0spmllbb6dkn95tv2sipy9c2f2leqjifistohp/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="py-3 mb-4">

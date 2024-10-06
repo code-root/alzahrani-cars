@@ -117,6 +117,48 @@
     </div>
 </div>
 
+<!-- Modal for editing slider -->
+<div class="modal fade" id="editSliderModal" tabindex="-1" aria-labelledby="editSliderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editSliderModalLabel">تعديل السلايدر</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editSliderForm">
+                    <input type="hidden" id="sliderId" name="id">
+                    <div class="mb-3">
+                        <label for="name_ar" class="form-label">الاسم بالعربية</label>
+                        <input type="text" class="form-control" id="name_ar" name="name_ar" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name_en" class="form-label">الاسم بالإنجليزية</label>
+                        <input type="text" class="form-control" id="name_en" name="name_en" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="details" class="form-label">التفاصيل</label>
+                        <textarea class="form-control" id="details" name="details"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="status" class="form-label">الحالة</label>
+                        <select class="form-control" id="status" name="status">
+                            <option value="1">نشط</option>
+                            <option value="0">غير نشط</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">الصورة</label>
+                        <input type="file" class="form-control" id="image" name="image">
+                        <img id="currentImage" src="" alt="Current Image" class="img-thumbnail mt-2" style="max-width: 100px;">
+                    </div>
+                    <button type="submit" class="btn btn-primary">حفظ التعديلات</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section('footer')
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script src="{{ asset('assets/app-assets/vendors/js/extensions/sweetalert.min.js') }}"></script>
@@ -232,6 +274,46 @@ $(document).ready(function() {
                     table.ajax.reload();
                 }
             });
+        });
+    });
+
+    // فتح البوب أب وتعبئة البيانات
+    $('.edit-slider').on('click', function() {
+        var sliderId = $(this).data('id');
+        var editUrl = `{{ route("appSlider.edit", ":id") }}`.replace(':id', data);
+
+        $.ajax({
+            url:editUrl,
+            type: 'GET',
+            success: function(data) {
+                $('#sliderId').val(data.id);
+                $('#name_ar').val(data.name_ar);
+                $('#name_en').val(data.name_en);
+                $('#details').val(data.details);
+                $('#status').val(data.status);
+                $('#currentImage').attr('src', `/storage/${data.image}`);
+                $('#editSliderModal').modal('show');
+            }
+        });
+    });
+
+    // إرسال النموذج لتحديث البيانات
+    $('#editSliderForm').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        var updateUrl = `{{ route("appSlider.update", ":id") }}`.replace(':id', data);
+
+        $.ajax({
+            url: updateUrl,
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                $('#editSliderModal').modal('hide');
+                // تحديث الجدول أو الصفحة
+                location.reload();
+            }
         });
     });
 });
