@@ -16,6 +16,7 @@ use App\Http\Controllers\dashboard\HomePageSettingsController;
 use App\Http\Controllers\dashboard\SettingsController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\SubscriberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,7 +92,7 @@ Route::group(['prefix' => 'dashboard'], function () {
             Route::get('/getData', [AppSliderController::class, 'getData'])->name('appSlider.data');
             Route::post('create', [AppSliderController::class, 'create'])->name('appSlider.create');
             Route::get('/show', [AppSliderController::class, 'show'])->name('appSlider.show');
-            Route::get('/{id}/edit', [AppSliderController::class, 'edit'])->name('');
+            Route::get('/{id}/edit', [AppSliderController::class, 'edit'])->name('appSlider.edit');
             Route::put('/{id}/update', [AppSliderController::class, 'update'])->name('appSlider.update');
             Route::delete('/destroy', [AppSliderController::class, 'destroy'])->name('appSlider.destroy');
             Route::post('toggle-status', [AppSliderController::class, 'toggleStatus'])->name('appSlider.toggleStatus');
@@ -103,9 +104,7 @@ Route::group(['prefix' => 'dashboard'], function () {
             Route::post('/upload', [ImageItemController::class, 'store'])->name('image.upload');
             Route::post('delete', [ImageItemController::class, 'delete'])->name('image.delete');
         });
-    });
 
-    Route::group(['prefix' => 'dashboard', 'middleware' => 'auth:web'], function () {
         Route::get('faq', [FaqController::class, 'index'])->name('faq.index');
 
         Route::get('faq/data', [FaqController::class, 'data'])->name('faq.data');
@@ -146,3 +145,4 @@ Route::get('/', [SiteController::class, 'home'])->name('home');
 Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('contact', [ContactController::class, 'contact'])->name('contact.index');
 Route::get('page/{id}', [PageController::class, 'showPage'])->name('page.show');
+Route::post('/subscribe', [SubscriberController::class, 'store']);

@@ -78,16 +78,10 @@
                         </a>
                     </li> 
                     <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-edit"></i>
-                            <div class="text-truncate" data-i18n="settings">الإعدادات</div>
+                        <a href="{{ route('pages.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-file"></i>
+                            <div class="text-truncate" data-i18n="Pages">الصفحات</div>
                         </a>
-                        <li class="menu-item">
-                            <a href="{{ route('pages.index') }}" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-file"></i>
-                                <div class="text-truncate" data-i18n="Pages">الصفحات</div>
-                            </a>
-                        </li>
                     </li>
                 </ul>
             </aside>
@@ -169,7 +163,7 @@
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('login.logout') }}" target="_blank">
+                                        <a class="dropdown-item" href="{{ route('login.logout') }}" >
                                             <i class="bx bx-power-off me-2"></i>
                                             <span class="align-middle">Log Out</span>
                                         </a>

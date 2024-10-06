@@ -30,8 +30,8 @@
                 <div class="contact-me">
                     <div class="inner">
                         <div class="contact-us-info">
-                            <h3 class="heading-title">{{ $page->{"name" . app()->getLocale()} }}</h3>
-                            <p>{{ $page->{"description_" . app()->getLocale()} }}</p>
+                            <h3 class="heading-title">{!! $page->{"name" . app()->getLocale()} !!}</h3>
+                            <p>{!! $page->{"description_" . app()->getLocale()} !!}</p>
                         </div>
                     </div>
                 </div>

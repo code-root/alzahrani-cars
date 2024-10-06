@@ -71,6 +71,15 @@
                 {{ Form::label('faq_description', 'FAQ Description') }}
                 {{ Form::textarea('faq_description', $settings['faq_description'] ?? '', ['class' => 'form-control']) }}
 
+
+                {{ Form::label('contact_title', 'contact_title') }}
+                {{ Form::textarea('contact_title', $settings['contact_title'] ?? '', ['class' => 'form-control']) }}
+
+
+                {{ Form::label('contact_title_2', 'contact_title_2') }}
+                {{ Form::textarea('contact_title_2', $settings['contact_title_2'] ?? '', ['class' => 'form-control']) }}
+
+                
                 <!-- مواقع التواصل الاجتماعي -->
                 {{ Form::label('facebook', 'Facebook') }}
                 {{ Form::text('facebook', $settings['facebook'] ?? '', ['class' => 'form-control']) }}

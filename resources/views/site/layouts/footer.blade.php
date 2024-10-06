@@ -25,8 +25,8 @@
                         <div class="inner">
                             <p class="description">Enter your email address to register to our newsletter subscription</p>
                             <div class="input-group footer-subscription-form">
-                                <input type="email" class="form-control" placeholder="Your email">
-                                <button class="eman-btn btn-secondary btn-medium" type="button">Subscribe <i class="icon-4"></i></button>
+                                <input type="email" class="form-control" id="subscriber-email" placeholder="Your email" required>
+                                <button class="eman-btn btn-secondary btn-medium" id="subscribe-button" type="button">Subscribe <i class="icon-4"></i></button>
                             </div>
                             <ul class="social-share icon-transparent">
                                 @if(!empty($settings['facebook']))
@@ -65,10 +65,35 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner text-center">
-                        <p>Copyright 2024 <a href="" target="_blank">Mostafa Elbagory </a> Designed By <a href="https://wa.me/201001995914" target="_blank">CodeRoot</a>. All Rights Reserved</p>
+                        <p>Copyright 2024  Developr By <a href="https://wa.me/966535149897" target="_blank">CodeRoot</a>. All Rights Reserved</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#subscribe-button').click(function() {
+            var email = $('#subscriber-email').val();
+            $.ajax({
+                url: '/subscribe',
+                method: 'POST',
+                data: {
+                    email: email,
+                    _token: '{{ csrf_token() }}' // تأكد من إضافة CSRF token
+                },
+                success: function(response) {
+                    alert(response.message);
+                    $('#subscriber-email').val(''); // مسح حقل البريد الإلكتروني بعد الاشتراك
+                },
+                error: function(xhr) {
+                    var errors = xhr.responseJSON.errors;
+                    alert(errors.email[0]); // عرض رسالة الخطأ
+                }
+            });
+        });
+    });
+</script>

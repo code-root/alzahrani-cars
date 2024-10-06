@@ -49,6 +49,12 @@ class AppServiceProvider extends ServiceProvider
             $view->with('settings', $settings);
         });
 
+        view()->composer('site.pages.contact',
+        function ($view) {
+            $settings = Setting::pluck('value', 'slug')->toArray();
+            $view->with('settings', $settings);
+        });
+
     }
 
 

@@ -161,8 +161,8 @@
 
 @section('footer')
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-<script src="{{ asset('assets/app-assets/vendors/js/extensions/sweetalert.min.js') }}"></script>
-<script src="{{ asset('assets/dashboard/js/app.js') }}"></script>
+<script src="{{ asset('assets') }}/dashboard/app-assets/vendors/js/extensions/sweetalert.min.js'"></script>
+<script src="{{ asset('assets') }}/dashboard/js/app.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script>
@@ -196,9 +196,6 @@ $(document).ready(function() {
                         </a>
                         <a href="#" class="dropdown-item toggle-status" data-id="${data}" data-status="${row.status}">
                             <i class="fa fa-toggle-${row.status == 1 ? 'on' : 'off'}"></i> ${row.status == 1 ? 'تعطيل' : 'تمكين'}
-                        </a>
-                        <a href="#" class="dropdown-item delete-slider" data-id="${data}">
-                            <i class="fa fa-trash"></i> حذف
                         </a>
                     `;
                 }

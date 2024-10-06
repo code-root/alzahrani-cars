@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Subscriber;
 
 class HomeController extends Controller
 {
@@ -23,8 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $subscribers = Subscriber::all(); // استرجاع جميع المشتركين
 
-        return view('dashboard.home'); }
+        return view('dashboard.home', compact('subscribers'));
+    
+    }
 
     
 }

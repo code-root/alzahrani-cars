@@ -37,13 +37,16 @@ class SettingsController extends Controller
             'tiktok' => 'nullable|string|max:255',
             'x' => 'nullable|string|max:255',
         ]);
-
+        
         $settingsData = $request->only([
             'site_name', 'phone', 'email', 'footer_description', 
             'about_intro', 'about_mission', 'about_vision',
             'faq_pre_title', 'faq_title', 'faq_description',
             'facebook', 'twitter', 'instagram', 'linkedin',
-            'youtube', 'snapchat', 'tiktok', 'x'
+            'youtube', 'snapchat', 'tiktok',
+             'x' ,
+             'contact_title' ,
+             'contact_title_2' ,
         ]);
 
         if ($request->hasFile('logo')) {

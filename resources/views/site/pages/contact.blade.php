@@ -31,31 +31,30 @@
                     <div class="inner">
                         <div class="thumbnail">
                             <div class="thumb">
-                                <img src="assets/images/others/contact-me.jpg" alt="Contact Me">
+                                <img src="assets/site/images/others/contact-me.jpg" alt="Contact Me">
                             </div>
                             <ul class="shape-group">
                                 <li class="shape-1 scene">
-                                    <img data-depth="1.4" src="assets/images/about/shape-13.png" alt="Shape">
+                                    <img data-depth="1.4" src="assets/site/images/about/shape-13.png" alt="Shape">
                                 </li>
                                 <li class="shape-2 scene">
-                                    <img data-depth="-1.4" src="assets/images/counterup/shape-02.png">
+                                    <img data-depth="-1.4" src="assets/site/images/counterup/shape-02.png">
                                 </li>
                                 <li class="shape-3">
-                                    <img src="assets/images/about/shape-07.png" alt="Shape">
+                                    <img src="assets/site/images/about/shape-07.png" alt="Shape">
                                 </li>
                             </ul>
                         </div>
                         <div class="contact-us-info">
-                            <h3 class="heading-title">I will Answer all Your Questions</h3>
+                            <h3 class="heading-title">{{ $settings['contact_title'] }}</h3>
                             <ul class="address-list">
-                          
                                 <li>
                                     <h5 class="title">Email</h5>
-                                    <p><a href="mailto:edublink@example.com">edublink@example.com</a></p>
+                                    <p><a href="mailto:{{ $settings['email'] }}">{{ $settings['email'] }}</a></p>
                                 </li>
                                 <li>
                                     <h5 class="title">Phone</h5>
-                                    <p><a href="tel:+0914135548598">(+091) 413 554 8598</a></p>
+                                    <p><a href="tel:+{{ $settings['phone'] }}">{{ $settings['phone'] }}</a></p>
                                 </li>
                             </ul>
                             <ul class="social-share">
@@ -97,7 +96,7 @@
             <div class="col-lg-8">
                 <div class="contact-form">
                     <div class="section-title section-center">
-                        <h3 class="title">Just Drop Me a Line</h3>
+                        <h3 class="title">{{ $settings['contact_title_2'] }}</</h3>
                     </div>
                     <form class="rnt-contact-form rwt-dynamic-form" id="contact-form" method="POST" action="{{ route('contact.store') }}">
                         @csrf
