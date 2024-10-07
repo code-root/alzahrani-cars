@@ -107,6 +107,39 @@
     </div>
 </div>
 
+<!-- Modal to edit record -->
+<div class="offcanvas offcanvas-end" id="edit-record">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="editModalLabel">Edit Gallery</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body flex-grow-1">
+        <div id="edit-error-messages"></div>
+        
+        {{ Form::open(['route' => ['gallery.update', ':id'], 'id' => 'edit-form', 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
+        
+        <!-- حقل الصورة -->
+        {{ Form::label('edit_image', 'Image') }}
+        {{ Form::file('image', ['id' => 'edit_image', 'name' => 'image', 'class' => 'form-control']) }}
+        
+        <!-- حقل الحالة -->
+        {{ Form::label('edit_status', 'Status') }}
+        {{ Form::select('status', ['1' => 'active', '0' => 'not active'], null, ['class' => 'form-control', 'id' => 'edit_status']) }}
+
+        <!-- حقل الفئة -->
+        {{ Form::label('edit_category_id', 'Category') }}
+        {{ Form::select('category_id', $categories, null, ['class' => 'form-control', 'id' => 'edit_category_id']) }}
+
+        <br>
+        <br>
+        <!-- زر الإرسال -->
+        <button type="button" class="btn btn-primary" id="updateForm">Update</button>
+        <!-- حقل CSRF -->
+        @csrf
+        {{ Form::close() }}
+    </div>
+</div>
+
 @section('footer')
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script src="{{ asset('assets/app-assets/vendors/js/extensions/sweetalert.min.js') }}"></script>
@@ -135,11 +168,7 @@ $(document).ready(function() {
             {
                 data: 'id',
                 render: function(data, type, row) {
-                    var editUrl = `{{ route("gallery.edit", ":id") }}`.replace(':id', data);
                     return `
-                        <a href="${editUrl}" class="dropdown-item" data-id="${data}">
-                            <i class="fa fa-pencil"></i> تعديل
-                        </a>
                         <a href="#" class="dropdown-item toggle-status" data-id="${data}" data-status="${row.status}">
                             <i class="fa fa-toggle-${row.status == 1 ? 'on' : 'off'}"></i> ${row.status == 1 ? 'تعطيل' : 'تمكين'}
                         </a>
@@ -150,6 +179,55 @@ $(document).ready(function() {
                 }
             }
         ]
+    });
+
+    // Edit gallery
+    $(document).on('click', '.edit-gallery', function(e) {
+        e.preventDefault();
+        var id = $(this).data('id');
+        var url = `{{ route("gallery.edit", ":id") }}`.replace(':id', id);
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            success: function(data) {
+                $('#edit_image').val(''); // Reset the image input
+                $('#edit_status').val(data.status);
+                $('#edit_category_id').val(data.category_id);
+                $('#edit-form').attr('action', "{{ route('gallery.update', '') }}/" + id);
+                $('#edit-record').modal('show');
+            }
+        });
+    });
+
+    $('#updateForm').click(function(e) {
+        e.preventDefault();
+        var formData = new FormData($('#edit-form')[0]);
+        $.ajax({
+            url: $('#edit-form').attr('action'),
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                $('#edit-record').modal('hide');
+                $('.form-control').removeClass('is-invalid');
+                Lobibox.notify('success', {
+                    title: 'Success',
+                    msg: 'تم التحديث بنجاح.'
+                });
+                table.ajax.reload();
+            },
+            error: function(xhr) {
+                var errors = JSON.parse(xhr.responseText).errors;
+                var errorMessages = '';
+                $.each(errors, function(key, value) {
+                    $('#' + key).addClass('is-invalid');
+                    errorMessages += '<li>' + value + '</li>';
+                });
+                $('#edit-error-messages').html('<div class="alert alert-danger"><ul>' + errorMessages + '</ul></div>');
+            }
+        });
     });
 
     $('#data-x').on('click', '.toggle-status', function(e) {

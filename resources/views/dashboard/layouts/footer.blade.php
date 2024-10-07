@@ -6,7 +6,7 @@
             <script>
                 document.write(new Date().getFullYear())
             </script>, made with ❤️ by <a href="/" target="_blank"
-                class="footer-link fw-medium">Mostafa</a>
+                class="footer-link fw-medium">Code Root</a>
         </div>
     </div>
 </footer>

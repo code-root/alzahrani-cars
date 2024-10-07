@@ -105,6 +105,10 @@
                 {{ Form::label('x', 'X') }}
                 {{ Form::text('x', $settings['x'] ?? '', ['class' => 'form-control']) }}
 
+                {{ Form::label('whatsapp', 'whatsapp') }}
+                {{ Form::text('whatsapp', $settings['whatsapp'] ?? '', ['class' => 'form-control']) }}
+
+
                 <br>
                 <button type="button" class="btn btn-primary" id="submitSettings">Submit</button>
                 @csrf

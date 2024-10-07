@@ -23,7 +23,9 @@ class ContactController extends Controller
             'message' => $request->input('contact-message'),
         ]);
 
-        return redirect()->back()->with('success', 'Your message has been sent successfully.');
+        return [
+            'success', 'Your message has been sent successfully.'
+        ];
     }
 
     public function index()

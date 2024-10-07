@@ -51,8 +51,8 @@
                     <!-- <i class="icon-34"></i> -->
                 </div>
                 <div class="content">
-                    <h4 class="title">Scholarship Facility</h4>
-                    <p>Lorem ipsum dolor sit amet cont adipiscing elit.</p>
+                    <h4 class="title">الخبرات</h4>
+                    <p>نعمل في مجال مزادات السيارات لعدت أعوام ما اكسبنا الكثير من الخبرات والتي انعكست على مستوى رضى عملائنا </p>
                 </div>
             </div>
             <div class="features-box features-style-3 color-secondary-style al-eman--svg-animate">
@@ -60,8 +60,8 @@
                     <img class="svgInject" src="assets/site/images/animated-svg-icons/skilled-lecturers.svg" alt="animated icon">
                 </div>
                 <div class="content">
-                    <h4 class="title">Skilled Lecturers</h4>
-                    <p>Lorem ipsum dolor sit amet cont adipiscing elit.</p>
+                    <h4 class="title">الجودة</h4>
+                    <p>نهتم بأدق التفاصيل بالاستعانة بفريق متخصص في مجال فحص المركبات لتأكد من جودتها وسلامتها بمعايير عالية</p>
                 </div>
             </div>
             <div class="features-box features-style-3 color-extra02-style al-eman--svg-animate">
@@ -70,8 +70,8 @@
                     <!-- <i class="icon-36"></i> -->
                 </div>
                 <div class="content">
-                    <h4 class="title">Book Library &amp; Store</h4>
-                    <p>Lorem ipsum dolor sit amet cont adipiscing elit.</p>
+                    <h4 class="title">الإنجازات</h4>
+                    <p>بفضل الله تم الاعتماد علينا من قبل الكثير من البنوك وكبرى الشركات والمؤسسات في تسويق وبيع المركبات التابع لهم وكنا ولازلنا نطمح في الاستمرار بالعمل للوصول إلى القمة دائما.  </p>
                 </div>
             </div>
         </div>

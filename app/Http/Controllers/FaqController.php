@@ -39,9 +39,8 @@ class FaqController extends Controller
     public function edit($id)
     {
         $faq = Faq::findOrFail($id);
-        return view('dashboard.faq.edit', compact('faq'));
+        return response()->json($faq);
     }
-
     public function update(Request $request, $id)
     {
         $request->validate([

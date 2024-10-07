@@ -14,10 +14,10 @@ class SiteController extends Controller
     public function home()
     {
         $settings = Setting::pluck('value', 'slug')->toArray();
-        $sliders = AppSlider::all();
-        $categories = Category::with('galleries')->get();
+        $sliders = AppSlider::where('status' , 1)->get();
+        $categories = Category::with('galleries')->where('status' , 1)->get();
         $faqs = Faq::all();
-        $partners = SuccessPartner::all(); // استرجاع الشركاء الناجحين
+        $partners = SuccessPartner::get(); 
         $pages = Page::all();
         return view('site.home', compact('settings', 'sliders', 'categories', 'faqs', 'partners', 'pages'));
     }

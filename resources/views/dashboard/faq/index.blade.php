@@ -106,7 +106,7 @@ $(document).ready(function() {
                 render: function(data, type, row) {
                     var editUrl = `{{ route("faq.edit", ":id") }}`.replace(':id', data);
                     return `
-                        <a href="${editUrl}" class="dropdown-item" data-id="${data}">
+                        <a href="#" class="dropdown-item edit-faq" data-id="${data}">
                             <i class="fa fa-pencil"></i> تعديل
                         </a>
                         <a href="#" class="dropdown-item delete-faq" data-id="${data}">
@@ -145,6 +145,21 @@ $(document).ready(function() {
                     errorMessages += '<li>' + value + '</li>';
                 });
                 $('#error-messages').html('<div class="alert alert-danger"><ul>' + errorMessages + '</ul></div>');
+            }
+        });
+    });
+
+    $('#data-x').on('click', '.edit-faq', function(e) {
+        e.preventDefault();
+        var id = $(this).data('id');
+        $.ajax({
+            url: "{{ route('faq.edit', '') }}/" + id,
+            type: 'GET',
+            success: function(data) {
+                // ملء الحقول في الـ Modal بالبيانات المسترجعة
+                $('#store-form').find('input[name="question"]').val(data.question);
+                $('#store-form').find('textarea[name="answer"]').val(data.answer);
+                $('#add-new-record').addClass('show'); // عرض الـ Modal
             }
         });
     });

@@ -36,6 +36,7 @@ class SettingsController extends Controller
             'snapchat' => 'nullable|string|max:255',
             'tiktok' => 'nullable|string|max:255',
             'x' => 'nullable|string|max:255',
+
         ]);
         
         $settingsData = $request->only([
@@ -47,6 +48,8 @@ class SettingsController extends Controller
              'x' ,
              'contact_title' ,
              'contact_title_2' ,
+             'whatsapp' ,
+             
         ]);
 
         if ($request->hasFile('logo')) {

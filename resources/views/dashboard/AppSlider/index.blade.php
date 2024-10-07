@@ -191,12 +191,15 @@ $(document).ready(function() {
                 render: function(data, type, row) {
                     var editUrl = `{{ route("appSlider.edit", ":id") }}`.replace(':id', data);
                     return `
-                        <a href="${editUrl}" class="dropdown-item" data-id="${data}">
-                            <i class="fa fa-pencil"></i> تعديل
-                        </a>
-                        <a href="#" class="dropdown-item toggle-status" data-id="${data}" data-status="${row.status}">
+                
+                   
+                               <a href="#" class="dropdown-item toggle-status" data-id="${data}" data-status="${row.status}">
                             <i class="fa fa-toggle-${row.status == 1 ? 'on' : 'off'}"></i> ${row.status == 1 ? 'تعطيل' : 'تمكين'}
                         </a>
+                        <a href="#" class="dropdown-item delete-slider" data-id="${data}">
+                            <i class="fa fa-trash"></i> حذف
+                        </a>
+                        
                     `;
                 }
             }

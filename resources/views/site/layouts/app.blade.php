@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://edublink.html.devsblink.com/assets/css/vendor/jqueru-ui-min.css">
     <link rel="stylesheet" href="/assets/site/css/vendor/swiper-bundle.min.css">
     <link rel="stylesheet" href="/assets/site/css/vendor/tipped.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <!-- Site Stylesheet -->
     <link rel="stylesheet" href="/assets/site/css/app.css">
 </head>

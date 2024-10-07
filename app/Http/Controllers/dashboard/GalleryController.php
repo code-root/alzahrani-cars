@@ -49,7 +49,10 @@ class GalleryController extends Controller
     {
         $gallery = Gallery::findOrFail($id);
         $categories = Category::pluck('name_en', 'id');
-        return view('dashboard.gallery.edit', compact('gallery', 'categories'));
+        return [
+            'categories'=>$categories ,
+            'gallery'=>$gallery
+        ];
     }
 
     public function update(Request $request, $id)

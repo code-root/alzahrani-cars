@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.footer')
 @extends('dashboard.layouts.navbar')
 @section('body')
-<script src="https://cdn.tiny.cloud/1/dnxp1lzhvu0spmllbb6dkn95tv2sipy9c2f2leqjifistohp/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-origin/tinymce/7.3.0-86/tinymce.min.js" referrerpolicy="origin"></script>
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="py-3 mb-4">
@@ -50,14 +50,14 @@
                             @method('PUT')
                             <input type="hidden" id="page-id">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6" style="display:none">
                                     <div class="form-group">
                                         <label for="name_ar">Name (AR):</label>
                                         <input type="text" id="name_ar" name="name_ar" class="form-control">
                                         <input type="number" id="id" name="id"  style="display:none">
                                     </div>
                             
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="meta_ar">Meta (AR):</label>
                                         <input type="text" id="meta_ar" name="meta_ar" class="form-control">
                                     </div>
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" style="display:none">
                                 <label for="description_ar">Description (AR):</label>
                                 <textarea id="description_ar" name="description_ar" class="form-control"></textarea>
                             </div>

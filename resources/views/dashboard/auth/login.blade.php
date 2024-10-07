@@ -81,12 +81,7 @@
                           </div>
                         </div>
                         <br>
-                        <br>
-                        <br>
-                        <div class="form-group mb-0">
-                            <p class="text-muted">The final version issuance No. 1.0 Developer By <a href="">Msotafa Elbagory </a></p>
-                            <script>document.write(new Date().getFullYear())</script>
-                          </div>
+         
                       </form>
                     </div>
                   </div>

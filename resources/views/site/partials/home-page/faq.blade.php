@@ -32,11 +32,9 @@
             <div class="col-lg-6">
                 <div class="eman-faq-gallery">
                     <div class="faq-thumbnail thumbnail-1" data-sal-delay="50" data-sal="slide-up" data-sal-duration="1000">
-                        <img src="assets/site/images/faq/faq-10.webp" alt="Faq Images">
+                        <img src="https://static.semrush.com/blog/uploads/media/58/b7/58b7eaacbb07317b6d97d6dc1b15f7b2/faq-templates-examples.svg" alt="Faq Images">
                     </div>
-                    <div class="faq-thumbnail thumbnail-2" data-sal-delay="50" data-sal="slide-up" data-sal-duration="1000">
-                        <img src="assets/site/images/faq/faq-11.webp" alt="Faq Images">
-                    </div>
+               
                     <ul class="shape-group">
                         <li class="shape-1 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
                             <img data-depth="1.5" src="assets/site/images/faq/shape-18.png" alt="Shape Images">
