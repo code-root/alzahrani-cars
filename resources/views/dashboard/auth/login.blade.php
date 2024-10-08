@@ -46,7 +46,7 @@
                         @csrf
                         <h3>Sign in to account</h3>
                         <p>Enter your email & password to login</p>
-                        <a class="logo" href=""><img class="img-fluid for-light" src="https://www.cd-root.com/back-end/storage//app/public/logos/A2ghZzHNOun6FZCdste1w1PpqovvijpCI3dFVVRi.png" alt="looginpage" width="60%"><img class="img-fluid for-dark" src="/logo.png"  width="10%" alt="looginpage"></a>
+                        <a class="logo" href=""><img class="img-fluid for-light" src="{{ asset('/back-end/storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="looginpage" width="60%"><img class="img-fluid for-dark" src="/logo.png"  width="10%" alt="looginpage"></a>
 
                         <div class="form-group">
                             <label for="emailaddress">Email address</label>

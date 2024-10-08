@@ -19,8 +19,8 @@
                         <div class="logo">
                             <a href="{{ url('/') }}">
                                 
-                                <img class="logo-light" src="{{ asset('/back-end/storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}"style="width: 17rem;">
-                                <img class="logo-dark" src="{{ asset('/back-end/storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}"style="width: 17rem;">
+                                <img class="logo-light" src="{{ asset('/back-end/storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}"style="width: 20rem;">
+                                <img class="logo-dark" src="{{ asset('/back-end/storage/' . ($settings['logo'] ?? 'default-logo.png')) }}" alt="{{ $settings['site_name'] ?? 'My Website' }}"style="width: 20rem;">
                             </a>
                         </div>
                     </div>

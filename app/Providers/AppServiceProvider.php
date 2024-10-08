@@ -55,6 +55,12 @@ class AppServiceProvider extends ServiceProvider
             $view->with('settings', $settings);
         });
 
+        view()->composer('dashboard.auth.login',
+        function ($view) {
+            $settings = Setting::pluck('value', 'slug')->toArray();
+            $view->with('settings', $settings);
+        });
+        
     }
 
 
