@@ -7,6 +7,29 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+
+    public function storeAPI(Request $request) {
+      
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:20',
+            'message' => 'required|string',
+        ]);
+
+        Contact::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'phone' => $request->input('phone'),
+            'message' => $request->input('message'),
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Your message has been sent successfully.'
+        ]);
+    }
+
     public function store(Request $request)
     {
         $request->validate([

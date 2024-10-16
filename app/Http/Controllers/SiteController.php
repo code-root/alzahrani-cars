@@ -21,4 +21,23 @@ class SiteController extends Controller
         $pages = Page::all();
         return view('site.home', compact('settings', 'sliders', 'categories', 'faqs', 'partners', 'pages'));
     }
+
+    public function homeApi()
+    {
+        $settings = Setting::pluck('value', 'slug')->toArray();
+        $sliders = AppSlider::where('status' , 1)->get();
+        $categories = Category::with('galleries')->where('status' , 1)->get();
+        $faqs = Faq::all();
+        $partners = SuccessPartner::get(); 
+        $pages = Page::all();
+        
+        return response()->json([
+            'settings' => $settings,
+            'sliders' => $sliders,
+            'categories' => $categories,
+            'faqs' => $faqs,
+            'partners' => $partners,
+            'pages' => $pages
+        ]);
+    }
 }
