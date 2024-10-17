@@ -32,8 +32,7 @@
     </div>
     <ul class="shape-group">
         <li class="shape-1 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-            <img data-depth="2" src="assets/site/images/others/shape-10.png" alt="Shape">
-        </li>
+            <img data-depth="2" src="assets/site/images/others/shape-10.png" alt="Shape"></li>
         <li class="shape-2 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
             <img data-depth="-3" src="assets/site/images/others/shape-11.png" alt="Shape">
         </li>
@@ -52,7 +51,9 @@
                 </div>
                 <div class="content">
                     <h4 class="title">الخبرات</h4>
-                    <p>نعمل في مجال مزادات السيارات لعدت أعوام ما اكسبنا الكثير من الخبرات والتي انعكست على مستوى رضى عملائنا </p>
+                    <p>
+                        
+                    نعمل في مجال مزادات السيارات لعدة أعوام مما اكسبنا الكثير من الخبرات والتي انعكست على مستوى رضا عملائنا                 </p>
                 </div>
             </div>
             <div class="features-box features-style-3 color-secondary-style al-eman--svg-animate">
@@ -61,7 +62,9 @@
                 </div>
                 <div class="content">
                     <h4 class="title">الجودة</h4>
-                    <p>نهتم بأدق التفاصيل بالاستعانة بفريق متخصص في مجال فحص المركبات لتأكد من جودتها وسلامتها بمعايير عالية</p>
+                    <p>
+                    نهتم بأدق التفاصيل بالاستعانة بفريق متخصص في مجال فحص المركبات للتأكد من جودتها وسلامتها بمعايير عالية
+                    </p>
                 </div>
             </div>
             <div class="features-box features-style-3 color-extra02-style al-eman--svg-animate">
@@ -71,7 +74,9 @@
                 </div>
                 <div class="content">
                     <h4 class="title">الإنجازات</h4>
-                    <p>بفضل الله تم الاعتماد علينا من قبل الكثير من البنوك وكبرى الشركات والمؤسسات في تسويق وبيع المركبات التابع لهم وكنا ولازلنا نطمح في الاستمرار بالعمل للوصول إلى القمة دائما.  </p>
+                    <p>
+                    بفضل الله تم الاعتماد علينا من قبل الكثير من البنوك وكبرى الشركات والمؤسسات في تسويق وبيع المركبات التابعه لهم وكنا ولازلنا نطمح في الاستمرار بالعمل للوصول إلى القمة دائما
+                    </p>
                 </div>
             </div>
         </div>

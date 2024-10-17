@@ -18,6 +18,7 @@ class PageController extends Controller
 
 }
 
+
     public function getAll(Request $request) {
         $data = Page::where('id' , $request->page_id)->first();
         $d = 'description'.$this->language();

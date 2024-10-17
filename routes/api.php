@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\dashboard\PageController;
 use App\Http\Controllers\ContactController;
 
 /*
@@ -24,3 +25,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/home', [SiteController::class, 'homeApi'])->name('homeApi');
 Route::post('contact-store', [ContactController::class, 'storeAPI']);
 Route::post('/subscribe', [SubscriberController::class, 'store']);
+// Route::get('/page-all', [PageController::class, 'getIds']);
+// Route::get('/page', [PageController::class, 'getAll']);
