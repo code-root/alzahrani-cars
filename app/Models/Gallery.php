@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\App\Page;
 
 class Gallery extends Model
 {
@@ -35,5 +36,10 @@ class Gallery extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function page()
+    {
+        return $this->belongsTo(Page::class);
     }
 }

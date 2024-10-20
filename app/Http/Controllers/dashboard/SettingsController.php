@@ -20,6 +20,7 @@ class SettingsController extends Controller
             'site_name' => 'required|string|max:255',
             'phone' => 'required|string|max:20',
             'email' => 'required|email|max:255',
+            'dark_mode' => 'nullable|boolean',
             'footer_description' => 'nullable|string',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'about_intro' => 'nullable|string',
@@ -40,7 +41,7 @@ class SettingsController extends Controller
         ]);
         
         $settingsData = $request->only([
-            'site_name', 'phone', 'email', 'footer_description', 
+            'site_name', 'phone', 'email', 'dark_mode', 'footer_description', 
             'about_intro', 'about_mission', 'about_vision',
             'faq_pre_title', 'faq_title', 'faq_description',
             'facebook', 'twitter', 'instagram', 'linkedin',

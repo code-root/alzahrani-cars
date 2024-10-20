@@ -175,7 +175,10 @@ $(document).ready(function() {
                         <a href="#" class="dropdown-item delete-gallery" data-id="${data}">
                             <i class="fa fa-trash"></i> حذف
                         </a>
-                    `;
+                        <a href="{{ route('page.edit', ':id') }}" class="dropdown-item edit-page" data-id="${data}">
+                            <i class="fa fa-edit"></i> تعديل الصفحة
+                        </a>
+                    `.replace(':id', row.page_id ? row.page_id : 'new');
                 }
             }
         ]
@@ -252,6 +255,7 @@ $(document).ready(function() {
     $('#submitForm').click(function(e) {
         e.preventDefault();
         var formData = new FormData($('#store-form')[0]);
+
         $.ajax({
             url: "{{ route('gallery.create') }}",
             type: 'POST',

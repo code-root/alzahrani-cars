@@ -42,6 +42,9 @@
                                     <i class="icon-54"></i>
                                 </button>
                             </li>
+                            <li class="theme-toggle" id="theme-toggle-button">
+                                    <img src="/back-end/storage/moon_12080168.png" alt="Light Mode" id="theme-icon" style="width: 35px;height: 27px;background-color: white;">
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -93,3 +96,29 @@
         <!--=====================================-->
         <!--=       Hero Banner Area Start      =-->
         <!--=====================================-->
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const body = document.querySelector('body');
+        const themeToggleButton = document.getElementById('theme-toggle-button');
+        const themeIcon = document.getElementById('theme-icon');
+
+        // تحقق من الوضع الحالي من خلال الكلاس
+        if (body.classList.contains('dark-mode')) {
+            themeIcon.src = '/back-end/storage/dark_13674412.png';
+        } else {
+            themeIcon.src = '/back-end/storage/moon_12080168.png'; // صورة الوضع الفاتح
+        }
+
+        themeToggleButton.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+
+            // تغيير الصورة بناءً على الوضع الحالي
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.src = '/back-end/storage/dark_13674412.png';
+            } else {
+                themeIcon.src = '/back-end/storage/moon_12080168.png'; // صورة الوضع الفاتح
+            }
+        });
+    });
+</script>
+

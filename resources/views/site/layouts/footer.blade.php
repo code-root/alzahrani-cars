@@ -81,7 +81,9 @@
         </div>
     </div>
 </footer>
-
+<a href="https://wa.me/{{ $basicFields['whatsapp'] ?? '' }}&text=اهلا بكم" class="whatsapp-float" target="_blank">
+<i class="fab fa-whatsapp my-float"></i>
+</a>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {

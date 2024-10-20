@@ -20,12 +20,28 @@
     <link rel="stylesheet" href="https://edublink.html.devsblink.com/assets/css/vendor/jqueru-ui-min.css">
     <link rel="stylesheet" href="/assets/site/css/vendor/swiper-bundle.min.css">
     <link rel="stylesheet" href="/assets/site/css/vendor/tipped.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
     <!-- Site Stylesheet -->
     <link rel="stylesheet" href="/assets/site/css/app.css">
 </head>
+<style>
+    .whatsapp-float {
+	position:fixed;
+    width: 62px;
+    height: 64px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:4rem;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
 
+    }
+</style>
         
 
         @include('site.layouts.navbar')
